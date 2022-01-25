@@ -5,10 +5,13 @@ jobs:
     name: My first job
     runs-on: ubuntu-latest
     steps:
-    - name: checkout
-      uses: actions/checkout@master
-    - name: Run a single-line script
-      run: echo "Hello World!"
+    - name: hello world action step
+      id: hello
+      uses: tanzhiliangit/hello-world-docker-action@v1
+      with:
+        who-to-greet: 'tzl'
+    - name: Get the output time
+      run: echo "The time was ${{ steps.hello.outputs.time }}"
   my_second_job:
     name: My second job
     runs-on: macos-latest
