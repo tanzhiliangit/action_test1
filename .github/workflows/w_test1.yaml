@@ -20,4 +20,3 @@ jobs:
       run: |
         echo $MY_VAR
         echo My name is $MY_NAME
-        echo ${github.event_name}
