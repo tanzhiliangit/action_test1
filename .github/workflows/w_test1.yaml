@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: hello world action step
       id: hello
-      uses: tanzhiliangit/hello-world-docker-action@v1
+      uses: tanzhiliangit/hello-world-docker-action@v2
       with:
         who-to-greet: 'tzl'
     - name: Get the output time
