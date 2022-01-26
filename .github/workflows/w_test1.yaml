@@ -1,6 +1,11 @@
 name: Hello World
 on: push
 jobs:
+  approved:
+    if: github.event.review.state == 'approved'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This PR was approved"
   my_first_job:
     name: My first job
     runs-on: ubuntu-latest
