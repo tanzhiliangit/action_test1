@@ -8,7 +8,6 @@ jobs:
     steps:
       - name: init install
         run: |
-          apt-get update
           curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
       - name: 'Az CLI login'
