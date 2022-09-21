@@ -10,7 +10,7 @@ jobs:
         run: |
           curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
           which az
-          echo ${{ secrets.AZURE_PASS }}
+          az login --service-principal --tenant 21fadfa6-aa44-4433-ad30-81f4941512e4 --username 1c26eebb-2fd0-4981-995a-b3a5731cd448  --password  ${{ secrets.AZURE_PASS }}
 
       - name: 'Az CLI login'
         uses: azure/login@v1
