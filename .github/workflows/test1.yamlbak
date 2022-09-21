@@ -12,9 +12,14 @@ jobs:
           which az
           az login --service-principal --tenant 21fadfa6-aa44-4433-ad30-81f4941512e4 --username 1c26eebb-2fd0-4981-995a-b3a5731cd448  --password  ${{ secrets.AZURE_PASS }}
 
-      - name: Check for resource compliance
-        uses: azure/policy-compliance-scan@v0
+      - name: 'Az CLI login'
+        uses: azure/login@v1
         with:
-          scopes: |
-            /subscriptions/a02ee366-1fc7-4410-ad23-842c66da53a9/resourceGroups/s_group1   
-         
+          creds: ${{ secrets.AZURE_PASS }}
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          environment: "azurecloud"
+      - name: test1
+        run: |
+           az account list 
+
