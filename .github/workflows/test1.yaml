@@ -9,6 +9,8 @@ jobs:
       - name: init install
         run: |
           curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+          which az
+          echo ${{ secrets.AZURE_PASS }}
 
       - name: 'Az CLI login'
         uses: azure/login@v1
