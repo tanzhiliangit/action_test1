@@ -4,8 +4,13 @@ on:
 jobs: 
 
   az-login-test-non-oidc:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
+      - name: init install
+        run: |
+          apt-get update
+          curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
       - name: 'Az CLI login'
         uses: azure/login@v1
         with:
