@@ -4,7 +4,7 @@ on:
 jobs: 
 
   az-login-test-non-oidc:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: 'Az CLI login'
         uses: azure/login@v1
