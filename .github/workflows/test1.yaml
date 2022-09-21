@@ -1,0 +1,15 @@
+name: Run Azure Login
+on: 
+  workflow_dispatch:
+jobs: 
+
+  az-login-test-non-oidc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Az CLI login'
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_PASS }}
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          environment: "AzureCloud"
